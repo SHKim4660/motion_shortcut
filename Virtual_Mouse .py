@@ -5,6 +5,7 @@ import numpy as np
 import hand_traking_module as htm
 import time
 import autopy
+import webbrowser
 
 ################################
 wCam,hCam =640,480
@@ -21,6 +22,10 @@ pTime = 0
 detector = htm.handDetector(maxHands=1)
 
 wScr,hScr = autopy.screen.size() 
+
+def openurl(url):
+    url = str(url)
+    webbrowser.open(url)
 
 while True:
     try:
@@ -41,14 +46,24 @@ while True:
             # print(fingers)
 
             if fingers[0] == 0 and fingers[1] == 0 and fingers[2] == 1  and fingers[3] == 1  and fingers[4] == 1:
-
+                cv2.circle(img,(x2,y2),15,(0,0,255),cv2.FILLED)
+                cv2.circle(img,(x3,y3),15,(0,0,255),cv2.FILLED)
+                cv2.circle(img,(x4,y4),15,(0,0,255),cv2.FILLED)
+                openurl("")  #트위터
+                openurl("")  #트위치
+                openurl("")  #카페
+                
+            if fingers[0] == 0 and fingers[1] == 1 and fingers[2] == 1  and fingers[3] == 1  and fingers[4] == 0:
                 cv2.circle(img,(x1,y1),15,(0,0,255),cv2.FILLED)
+                cv2.circle(img,(x2,y2),15,(0,0,255),cv2.FILLED)
+                cv2.circle(img,(x3,y3),15,(0,0,255),cv2.FILLED)
+                openurl("")  #유튜브
 
-
-            if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 0:
-                pass
-
-
+            if fingers[0] == 0 and fingers[1] == 1 and fingers[2] == 1  and fingers[3] == 1  and fingers[4] == 1:
+                cv2.circle(img,(x1,y1),15,(0,0,255),cv2.FILLED)
+                cv2.circle(img,(x2,y2),15,(0,0,255),cv2.FILLED)
+                cv2.circle(img,(x3,y3),15,(0,0,255),cv2.FILLED)
+                openurl("")  #
 
 
         cTime = time.time()
