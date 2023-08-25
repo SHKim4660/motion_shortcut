@@ -45,25 +45,33 @@ while True:
             fingers = detector.fingersUp()
             # print(fingers)
 
+            # 00111
             if fingers[0] == 0 and fingers[1] == 0 and fingers[2] == 1  and fingers[3] == 1  and fingers[4] == 1:
                 cv2.circle(img,(x2,y2),15,(0,0,255),cv2.FILLED)
                 cv2.circle(img,(x3,y3),15,(0,0,255),cv2.FILLED)
                 cv2.circle(img,(x4,y4),15,(0,0,255),cv2.FILLED)
-                openurl("")  #트위터
-                openurl("")  #트위치
-                openurl("")  #카페
-                
+                openurl("https://twitter.com/NenekoMashiro")  #트위터
+                time.sleep(0.1)
+                openurl("https://cafe.naver.com/tteokbokk1")  #카페
+                time.sleep(0.1)
+                openurl("https://www.twitch.tv/nenekomashiro_stellive")  #트위치
+                time.sleep(1.5)
+
+            
+            # 01110
             if fingers[0] == 0 and fingers[1] == 1 and fingers[2] == 1  and fingers[3] == 1  and fingers[4] == 0:
                 cv2.circle(img,(x1,y1),15,(0,0,255),cv2.FILLED)
                 cv2.circle(img,(x2,y2),15,(0,0,255),cv2.FILLED)
                 cv2.circle(img,(x3,y3),15,(0,0,255),cv2.FILLED)
-                openurl("")  #유튜브
+                openurl("https://www.youtube.com")  #유튜브
+                time.sleep(1.5)
 
-            if fingers[0] == 0 and fingers[1] == 1 and fingers[2] == 1  and fingers[3] == 1  and fingers[4] == 1:
-                cv2.circle(img,(x1,y1),15,(0,0,255),cv2.FILLED)
-                cv2.circle(img,(x2,y2),15,(0,0,255),cv2.FILLED)
-                cv2.circle(img,(x3,y3),15,(0,0,255),cv2.FILLED)
-                openurl("")  #
+            # # 01111
+            # if fingers[0] == 0 and fingers[1] == 1 and fingers[2] == 1  and fingers[3] == 1  and fingers[4] == 1:
+            #     cv2.circle(img,(x1,y1),15,(0,0,255),cv2.FILLED)
+            #     cv2.circle(img,(x2,y2),15,(0,0,255),cv2.FILLED)
+            #     cv2.circle(img,(x3,y3),15,(0,0,255),cv2.FILLED)
+            #     openurl("")  #
 
 
         cTime = time.time()
